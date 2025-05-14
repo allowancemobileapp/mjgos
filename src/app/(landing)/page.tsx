@@ -1,15 +1,12 @@
-import type { Metadata } from 'next';
+"use client";
+
 import { HeroSection } from "@/components/sections/hero-section";
 import { FeatureSection } from "@/components/sections/feature-section";
 import { CustomerLogosSection } from "@/components/sections/customer-logos-section";
 import type { Feature } from "@/types";
 import { BarChart, DollarSign, Users, Zap } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: 'Allowance - Smart Financial Management',
-  description: 'Take control of your finances with Allowance. Easy tracking, insightful reports, and secure management for your personal allowance and expenses.',
-  keywords: ['finance', 'allowance', 'budget', 'money management', 'personal finance'],
-};
+// Metadata has been moved to src/app/(landing)/layout.tsx
 
 const features: Feature[] = [
   {

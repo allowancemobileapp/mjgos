@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+
+export const metadata: Metadata = {
+  title: 'Allowance - Smart Financial Management',
+  description: 'Take control of your finances with Allowance. Easy tracking, insightful reports, and secure management for your personal allowance and expenses.',
+  keywords: ['finance', 'allowance', 'budget', 'money management', 'personal finance'],
+};
 
 export default function LandingLayout({
   children,
