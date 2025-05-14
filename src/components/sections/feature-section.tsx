@@ -1,0 +1,82 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import type { LucideIcon } from "lucide-react";
+import { fadeIn } from "@/lib/motion";
+import { cn } from "@/lib/utils";
+
+interface FeatureSectionProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageHint?: string;
+  reverse?: boolean;
+  isDark?: boolean;
+}
+
+export function FeatureSection({
+  icon: Icon,
+  title,
+  description,
+  imageSrc,
+  imageAlt,
+  imageHint,
+  reverse = false,
+  isDark = false,
+}: FeatureSectionProps) {
+  return (
+    <motion.section
+      className={cn(
+        "py-16 sm:py-24",
+        isDark ? "bg-secondary text-secondary-foreground" : "bg-background text-foreground"
+      )}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeIn("up", 0.2)}
+      aria-labelledby={`feature-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={cn(
+            "grid md:grid-cols-2 gap-12 items-center",
+            reverse ? "md:grid-flow-col-dense" : ""
+          )}
+        >
+          <div className={cn(reverse ? "md:col-start-2" : "")}>
+            <div className="mb-4 inline-flex items-center justify-center p-3 bg-primary/10 text-primary rounded-lg">
+              <Icon className="h-8 w-8" aria-hidden="true" />
+            </div>
+            <h2 id={`feature-title-${title.toLowerCase().replace(/\s+/g, '-')}`} className="text-3xl font-bold mb-4">
+              {title}
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              {description}
+            </p>
+            {/* Optional: Add a CTA button for the feature */}
+            {/* <Button variant="link" className="text-primary p-0">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Button> */}
+          </div>
+          <div className={cn("relative mt-10 md:mt-0", reverse ? "md:col-start-1" : "")}>
+            <motion.div 
+              className="aspect-[16/10] rounded-xl overflow-hidden shadow-2xl"
+              whileHover={{ scale: 1.03, boxShadow: "0px 10px 30px -5px hsla(var(--primary) / 0.2)" }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                data-ai-hint={imageHint}
+                width={500}
+                height={312} // 500 * (10/16)
+                className="object-cover w-full h-full"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+}
