@@ -1,10 +1,13 @@
 "use client";
 
+export const runtime = "nodejs";
+
 import { HeroSection } from "@/components/sections/hero-section";
 import { FeatureSection } from "@/components/sections/feature-section";
 import { CustomerLogosSection } from "@/components/sections/customer-logos-section";
 import type { Feature } from "@/types";
 import { AppWindow, Smartphone, Globe, Zap, LayoutDashboard } from "lucide-react";
+import { PricingSection } from "@/components/sections/pricing-section";
 
 // Metadata is in layout.tsx
 
