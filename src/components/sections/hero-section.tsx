@@ -1,12 +1,49 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { fadeIn, staggerContainer } from "@/lib/motion";
 
+const websites = [
+  {
+    imageUrl: "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/MJGOS/Screenshot%202026-01-21%20042202.png",
+    url: "https://classrep.vercel.app/",
+    alt: "ClassRep website screenshot"
+  },
+  {
+    imageUrl: "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/MJGOS/Screenshot%202026-01-21%20042229.png",
+    url: "https://cccchigbolawfirm.vercel.app/",
+    alt: "CCC Chigbo Law Firm website screenshot"
+  },
+  {
+    imageUrl: "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/MJGOS/Screenshot%202026-01-21%20042348.png",
+    url: "https://interunibash.vercel.app/",
+    alt: "Interunibash website screenshot"
+  },
+  {
+    imageUrl: "https://crwwlgwjdclhvwqwspoa.supabase.co/storage/v1/object/public/MJGOS/Screenshot%202026-01-21%20042406.png",
+    url: "https://mjlt.vercel.app/",
+    alt: "MJLT website screenshot"
+  }
+];
+
+
 export function HeroSection() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2500, stopOnInteraction: true })
+  );
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle email submission logic
@@ -53,17 +90,31 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div className="relative" variants={fadeIn("left", 0.4)}>
-          <div className="aspect-video rounded-xl overflow-hidden shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-300">
-            <Image
-              src="https://placehold.co/600x400.png"
-              alt="MJGOS software solutions mockup"
-              data-ai-hint="app interface code"
-              width={600}
-              height={400}
-              priority
-              className="object-cover w-full h-full"
-            />
-          </div>
+           <Carousel
+            plugins={[plugin.current]}
+            className="w-full rounded-xl overflow-hidden shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-300"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent className="-ml-0">
+              {websites.map((site, index) => (
+                <CarouselItem key={index} className="pl-0">
+                  <Link href={site.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${site.alt}`}>
+                    <div className="aspect-video">
+                      <Image
+                        src={site.imageUrl}
+                        alt={site.alt}
+                        width={600}
+                        height={400}
+                        priority={index === 0}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10 hidden md:block"></div>
            <div className="absolute -top-8 -left-8 w-40 h-40 bg-accent/20 rounded-full blur-2xl -z-10 hidden md:block"></div>
         </motion.div>
