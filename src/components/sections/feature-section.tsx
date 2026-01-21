@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import type { LucideIcon } from "lucide-react";
+import { ArrowRight, type LucideIcon } from "lucide-react";
 import { fadeIn } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface FeatureSectionProps {
   icon: LucideIcon;
@@ -68,8 +70,12 @@ export function FeatureSection({
                 </p>
               </div>
             )}
-            {/* Optional: Add a CTA button for the feature */}
-            {/* <Button variant="link" className="text-primary p-0">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Button> */}
+            <Button asChild>
+                <Link href={`https://wa.me/2349135067590?text=I'm%20interested%20in%20your%20'${encodeURIComponent(title)}'%20service.`} target="_blank">
+                    Get a Quote
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </Button>
           </div>
           <div className={cn("relative mt-10 md:mt-0", reverse ? "md:col-start-1" : "")}>
             <motion.div 

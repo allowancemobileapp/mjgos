@@ -8,7 +8,19 @@ import { Button } from "@/components/ui/button";
 import type { Feature } from "@/types";
 import { AppWindow, Smartphone, Globe, Zap, Phone } from "lucide-react";
 
+// Metadata is now in layout.tsx
+
 const features: Feature[] = [
+  {
+    icon: Globe,
+    title: "Website Design & Development",
+    description: "From stunning marketing sites to complex e-commerce platforms, we create websites that look great and perform even better.",
+    imageSrc: "https://placehold.co/500x312.png",
+    imageAlt: "Screenshot of a modern website",
+    imageHint: "website design",
+    price: "N50k",
+    priceFrom: true,
+  },
   {
     icon: AppWindow,
     title: "Custom Web Applications",
@@ -27,16 +39,6 @@ const features: Feature[] = [
     imageAlt: "Screenshot of a mobile application",
     imageHint: "mobile app interface",
     price: "N700k",
-    priceFrom: true,
-  },
-  {
-    icon: Globe,
-    title: "Website Design & Development",
-    description: "From stunning marketing sites to complex e-commerce platforms, we create websites that look great and perform even better.",
-    imageSrc: "https://placehold.co/500x312.png",
-    imageAlt: "Screenshot of a modern website",
-    imageHint: "website design",
-    price: "N50k",
     priceFrom: true,
   },
   {

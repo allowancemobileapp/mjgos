@@ -71,13 +71,6 @@ export function PricingSection() {
       viewport={{ once: true, amount: 0.1 }}
     >
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
-        <motion.div variants={fadeIn('up', 0.1)} className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Build A...</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transparent pricing for projects of all sizes. Let's get busy!
-          </p>
-        </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
           {pricingPlans.map((plan, index) => (
             <motion.div key={plan.title} variants={fadeIn('up', 0.2 + index * 0.05)}>
