@@ -53,6 +53,7 @@ interface FeatureSectionProps {
 const services = [
   'Website Design & Development',
   'Custom Web Applications',
+  'Admin Dashboards',
   'Mobile App Development',
 ];
 
