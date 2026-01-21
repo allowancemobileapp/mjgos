@@ -15,7 +15,9 @@ const features: Feature[] = [
     description: "We build powerful, scalable web applications tailored to your specific business needs, delivering seamless user experiences.",
     imageSrc: "https://placehold.co/500x312.png",
     imageAlt: "Screenshot of a custom web application",
-    imageHint: "dashboard web app"
+    imageHint: "dashboard web app",
+    price: "N300k",
+    priceFrom: true,
   },
   {
     icon: Smartphone,
@@ -23,7 +25,9 @@ const features: Feature[] = [
     description: "Engage your users on the go with beautiful and intuitive mobile apps for both iOS and Android platforms.",
     imageSrc: "https://placehold.co/500x312.png",
     imageAlt: "Screenshot of a mobile application",
-    imageHint: "mobile app interface"
+    imageHint: "mobile app interface",
+    price: "N700k",
+    priceFrom: true,
   },
   {
     icon: Globe,
@@ -31,7 +35,9 @@ const features: Feature[] = [
     description: "From stunning marketing sites to complex e-commerce platforms, we create websites that look great and perform even better.",
     imageSrc: "https://placehold.co/500x312.png",
     imageAlt: "Screenshot of a modern website",
-    imageHint: "website design"
+    imageHint: "website design",
+    price: "N50k",
+    priceFrom: true,
   },
   {
     icon: Zap,
@@ -58,7 +64,6 @@ export default function LandingPage() {
         ))}
       </div>
       <CustomerLogosSection />
-      <PricingSection />
       <section id="contact" className="py-16 sm:py-24 bg-background text-center">
          <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <h2 className="text-3xl font-bold mb-4">Let's Get Busy!</h2>
@@ -70,6 +75,7 @@ export default function LandingPage() {
             </Button>
         </div>
       </section>
+      <PricingSection />
     </>
   );
 }

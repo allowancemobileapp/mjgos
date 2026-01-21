@@ -15,6 +15,8 @@ interface FeatureSectionProps {
   imageHint?: string;
   reverse?: boolean;
   isDark?: boolean;
+  price?: string;
+  priceFrom?: boolean;
 }
 
 export function FeatureSection({
@@ -26,6 +28,8 @@ export function FeatureSection({
   imageHint,
   reverse = false,
   isDark = false,
+  price,
+  priceFrom,
 }: FeatureSectionProps) {
   return (
     <motion.section
@@ -56,6 +60,14 @@ export function FeatureSection({
             <p className="text-lg text-muted-foreground mb-6">
               {description}
             </p>
+            {price && (
+              <div className="mb-6">
+                <p className="text-2xl font-bold text-primary">
+                  {price}
+                  {priceFrom && <span className="text-sm font-normal text-muted-foreground ml-1">/ starting from</span>}
+                </p>
+              </div>
+            )}
             {/* Optional: Add a CTA button for the feature */}
             {/* <Button variant="link" className="text-primary p-0">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Button> */}
           </div>

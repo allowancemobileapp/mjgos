@@ -7,4 +7,6 @@ export interface Feature {
   imageSrc: string;
   imageAlt: string;
   imageHint?: string;
+  price?: string;
+  priceFrom?: boolean;
 }
