@@ -39,7 +39,7 @@ export function FeatureSection({
       variants={fadeIn("up", 0.2)}
       aria-labelledby={`feature-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16">
         <div
           className={cn(
             "grid md:grid-cols-2 gap-12 items-center",

@@ -23,7 +23,7 @@ export function CustomerLogosSection() {
       viewport={{ once: true, amount: 0.2 }}
       aria-labelledby="customer-logos-heading"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16">
         <motion.h2 
           id="customer-logos-heading" 
           className="text-2xl font-semibold text-center text-foreground mb-4"
