@@ -1,12 +1,41 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, type LucideIcon } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import React from "react";
+
 import { fadeIn } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 interface FeatureSectionProps {
   icon: LucideIcon;
@@ -21,6 +50,22 @@ interface FeatureSectionProps {
   priceFrom?: boolean;
 }
 
+const services = [
+  'Website Design & Development',
+  'Custom Web Applications',
+  'Mobile App Development',
+];
+
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  service: z.string({
+    required_error: "Please select a service.",
+  }),
+});
+
+
 export function FeatureSection({
   icon: Icon,
   title,
@@ -33,6 +78,34 @@ export function FeatureSection({
   price,
   priceFrom,
 }: FeatureSectionProps) {
+  const [open, setOpen] = React.useState(false);
+  const { toast } = useToast();
+  
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      service: title,
+    },
+  });
+
+  React.useEffect(() => {
+    form.reset({ name: "", service: title });
+  }, [title, form]);
+
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    const message = `Hello, my name is ${values.name}. I'm interested in your '${values.service}' service.`;
+    const whatsappUrl = `https://wa.me/2349135067590?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    setOpen(false);
+    form.reset();
+    toast({
+      title: "Redirecting to WhatsApp...",
+      description: "Please complete your request on WhatsApp.",
+    });
+  }
+
   return (
     <motion.section
       className={cn(
@@ -70,12 +143,64 @@ export function FeatureSection({
                 </p>
               </div>
             )}
-            <Button asChild>
-                <Link href={`https://wa.me/2349135067590?text=I'm%20interested%20in%20your%20'${encodeURIComponent(title)}'%20service.`} target="_blank">
+            {price && (
+               <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger asChild>
+                  <Button>
                     Get a Quote
                     <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-            </Button>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>Get a Quote</DialogTitle>
+                    <DialogDescription>
+                      Fill in the details below. You'll be redirected to WhatsApp to send the message.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Your Name</FormLabel>
+                            <FormControl>
+                              <Input placeholder="e.g. Jane Doe" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="service"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Service</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select a service" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {services.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <Button type="submit" className="w-full">
+                        Send on WhatsApp
+                      </Button>
+                    </form>
+                  </Form>
+                </DialogContent>
+              </Dialog>
+            )}
           </div>
           <div className={cn("relative mt-10 md:mt-0", reverse ? "md:col-start-1" : "")}>
             <motion.div 
