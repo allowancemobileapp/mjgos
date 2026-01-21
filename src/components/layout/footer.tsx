@@ -4,11 +4,11 @@ import { Logo } from "@/components/icons/logo";
 
 const footerLinks = [
   {
-    title: "Product",
+    title: "Services",
     links: [
-      { href: "#features", label: "Features" },
-      { href: "#pricing", label: "Pricing" },
-      { href: "#integrations", label: "Integrations" },
+      { href: "#features", label: "Web Apps" },
+      { href: "#features", label: "Mobile Apps" },
+      { href: "#features", label: "Websites" },
     ],
   },
   {
@@ -24,7 +24,7 @@ const footerLinks = [
     links: [
       { href: "/docs", label: "Documentation" },
       { href: "/support", label: "Support" },
-      { href: "/api-status", label: "API Status" },
+      { href: "/contact", label: "Contact Us" },
     ],
   },
   {
@@ -32,7 +32,6 @@ const footerLinks = [
     links: [
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },
-      { href: "/cookies", label: "Cookie Policy" },
     ],
   },
 ];
@@ -49,11 +48,11 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-8">
           <div className="col-span-2 lg:col-span-1 mb-6 md:mb-0">
-            <Link href="/" className="inline-block mb-4" aria-label="Allowance Home">
+            <Link href="/" className="inline-block mb-4" aria-label="MJGOS Home">
               <Logo className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground">
-              Simplify your finances.
+              Simplicity and Functionality.
             </p>
           </div>
           {footerLinks.map((section) => (
@@ -78,7 +77,7 @@ export function Footer() {
         </div>
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Allowance Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} MJGOS Inc. All rights reserved.
           </p>
           <div className="flex space-x-4">
             {socialLinks.map((social) => (

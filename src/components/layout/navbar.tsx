@@ -11,7 +11,7 @@ import { ThemeToggleButton } from "./theme-toggle-button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
+  { href: "#features", label: "Services" },
   { href: "#pricing", label: "Pricing" },
   { href: "#contact", label: "Contact" },
 ];
@@ -46,7 +46,7 @@ export function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link href="/" aria-label="Allowance Home">
+        <Link href="/" aria-label="MJGOS Home">
           <Logo className="h-8 w-auto" />
         </Link>
 
@@ -65,7 +65,7 @@ export function Navbar() {
         <div className="flex items-center space-x-2">
           <ThemeToggleButton />
           <Button variant="default" size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
-            Sign Up
+            Get a Quote
           </Button>
           <Button
             variant="ghost"
@@ -102,7 +102,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                Sign Up
+                Get a Quote
               </Button>
             </div>
           </motion.div>

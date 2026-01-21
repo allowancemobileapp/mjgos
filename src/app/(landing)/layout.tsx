@@ -3,9 +3,9 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: 'Allowance - Smart Financial Management',
-  description: 'Take control of your finances with Allowance. Easy tracking, insightful reports, and secure management for your personal allowance and expenses.',
-  keywords: ['finance', 'allowance', 'budget', 'money management', 'personal finance'],
+  title: 'MJGOS - Custom Software Solutions',
+  description: 'We build high-quality web apps, websites, and mobile apps with a focus on simplicity and functionality.',
+  keywords: ['saas', 'web development', 'mobile apps', 'software solutions', 'custom software'],
 };
 
 export default function LandingLayout({

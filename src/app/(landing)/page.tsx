@@ -4,42 +4,40 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { FeatureSection } from "@/components/sections/feature-section";
 import { CustomerLogosSection } from "@/components/sections/customer-logos-section";
 import type { Feature } from "@/types";
-import { BarChart, DollarSign, Users, Zap } from "lucide-react";
-
-// Metadata has been moved to src/app/(landing)/layout.tsx
+import { AppWindow, Smartphone, Globe, Zap } from "lucide-react";
 
 const features: Feature[] = [
   {
-    icon: BarChart,
-    title: "Insightful Reports",
-    description: "Gain a clear understanding of your spending habits with detailed, easy-to-read reports. Visualize where your money goes and make smarter financial decisions.",
+    icon: AppWindow,
+    title: "Custom Web Applications",
+    description: "We build powerful, scalable web applications tailored to your specific business needs, delivering seamless user experiences.",
     imageSrc: "https://placehold.co/500x312.png",
-    imageAlt: "Screenshot of insightful financial reports",
-    imageHint: "charts graphs finance"
+    imageAlt: "Screenshot of a custom web application",
+    imageHint: "dashboard web app"
   },
   {
-    icon: DollarSign,
-    title: "Effortless Tracking",
-    description: "Log your income and expenses in seconds. Our intuitive interface makes it simple to stay on top of your finances, anytime, anywhere.",
+    icon: Smartphone,
+    title: "Mobile App Development",
+    description: "Engage your users on the go with beautiful and intuitive mobile apps for both iOS and Android platforms.",
     imageSrc: "https://placehold.co/500x312.png",
-    imageAlt: "Screenshot of effortless expense tracking",
-    imageHint: "mobile app list"
+    imageAlt: "Screenshot of a mobile application",
+    imageHint: "mobile app interface"
+  },
+  {
+    icon: Globe,
+    title: "Website Design & Development",
+    description: "From stunning marketing sites to complex e-commerce platforms, we create websites that look great and perform even better.",
+    imageSrc: "https://placehold.co/500x312.png",
+    imageAlt: "Screenshot of a modern website",
+    imageHint: "website design"
   },
   {
     icon: Zap,
-    title: "Budget Automation",
-    description: "Set up recurring allowances and bills. Let Allowance handle the repetitive tasks so you can focus on your financial goals.",
+    title: "Simplicity and Functionality",
+    description: "Our core philosophy. We focus on creating clean, intuitive designs that are highly functional and easy to use.",
     imageSrc: "https://placehold.co/500x312.png",
-    imageAlt: "Screenshot of budget automation feature",
-    imageHint: "calendar automation"
-  },
-  {
-    icon: Users,
-    title: "Shared Accounts (Coming Soon)",
-    description: "Collaborate on finances with family or partners. Manage shared budgets and track collective spendingGoals with ease.",
-    imageSrc: "https://placehold.co/500x312.png",
-    imageAlt: "Screenshot of shared accounts feature",
-    imageHint: "people collaboration"
+    imageAlt: "Illustration of simplicity and function",
+    imageHint: "clean minimal"
   },
 ];
 
@@ -58,17 +56,16 @@ export default function LandingPage() {
         ))}
       </div>
       <CustomerLogosSection />
-      {/* Placeholder for Pricing and Contact sections if needed */}
       <section id="pricing" className="py-16 sm:py-24 bg-background text-center">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-4">Pricing</h2>
-          <p className="text-lg text-muted-foreground">Coming Soon! Simple and transparent plans.</p>
+          <p className="text-lg text-muted-foreground">Flexible plans for businesses of all sizes. Contact us for a custom quote.</p>
         </div>
       </section>
       <section id="contact" className="py-16 sm:py-24 bg-secondary text-center">
          <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-          <p className="text-lg text-muted-foreground">Get in touch with the Allowance team.</p>
+          <p className="text-lg text-muted-foreground">Ready to start your project? Get in touch with our team.</p>
         </div>
       </section>
     </>

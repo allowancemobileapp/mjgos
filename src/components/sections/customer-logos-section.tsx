@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/motion";
 
 const logos = [
-  { src: "https://placehold.co/150x60.png?text=CompanyA", alt: "Company A Logo", hint: "logo company" },
-  { src: "https://placehold.co/150x60.png?text=CompanyB", alt: "Company B Logo", hint: "logo brand" },
-  { src: "https://placehold.co/150x60.png?text=CompanyC", alt: "Company C Logo", hint: "logo corporate" },
-  { src: "https://placehold.co/150x60.png?text=CompanyD", alt: "Company D Logo", hint: "logo tech" },
-  { src: "https://placehold.co/150x60.png?text=CompanyE", alt: "Company E Logo", hint: "logo startup" },
+  { src: "https://placehold.co/150x60.png?text=ClientA", alt: "Client A Logo", hint: "logo company" },
+  { src: "https://placehold.co/150x60.png?text=ClientB", alt: "Client B Logo", hint: "logo brand" },
+  { src: "https://placehold.co/150x60.png?text=ClientC", alt: "Client C Logo", hint: "logo corporate" },
+  { src: "https://placehold.co/150x60.png?text=ClientD", alt: "Client D Logo", hint: "logo tech" },
+  { src: "https://placehold.co/150x60.png?text=ClientE", alt: "Client E Logo", hint: "logo startup" },
 ];
 
 export function CustomerLogosSection() {
@@ -29,13 +29,13 @@ export function CustomerLogosSection() {
           className="text-2xl font-semibold text-center text-foreground mb-4"
           variants={fadeIn("up", 0.1)}
         >
-          Trusted by leading companies
+          Trusted by businesses worldwide
         </motion.h2>
         <motion.p 
           className="text-lg text-muted-foreground text-center mb-12"
           variants={fadeIn("up", 0.2)}
         >
-          Join innovative teams using Allowance to manage their finances effectively.
+          We've helped amazing companies bring their ideas to life.
         </motion.p>
         <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-12 lg:gap-x-16">
           {logos.map((logo, index) => (

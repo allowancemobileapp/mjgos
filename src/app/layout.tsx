@@ -10,21 +10,21 @@ const geistMono = GeistMono;
 
 export const metadata: Metadata = {
   title: {
-    default: 'Allowance - Simplify Your Finances',
-    template: '%s | Allowance',
+    default: 'MJGOS - Simplicity and Functionality',
+    template: '%s | MJGOS',
   },
-  description: 'Allowance helps you manage your finances effortlessly. Modern, simple, and powerful.',
+  description: 'MJGOS (Mr James Group of SAAS) builds high-quality, functional software solutions including web apps, websites, and mobile apps.',
   openGraph: {
-    title: 'Allowance - Simplify Your Finances',
-    description: 'Allowance helps you manage your finances effortlessly. Modern, simple, and powerful.',
-    url: 'https://allowance.example.com', // Replace with actual URL
-    siteName: 'Allowance',
+    title: 'MJGOS - Simplicity and Functionality',
+    description: 'MJGOS builds high-quality, functional software solutions.',
+    url: 'https://mjgos.example.com', // Replace with actual URL
+    siteName: 'MJGOS',
     images: [
       {
         url: 'https://placehold.co/1200x630.png', // Replace with actual OG image
         width: 1200,
         height: 630,
-        alt: 'Allowance App Preview',
+        alt: 'MJGOS App Preview',
       },
     ],
     locale: 'en_US',
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Allowance - Simplify Your Finances',
-    description: 'Allowance helps you manage your finances effortlessly. Modern, simple, and powerful.',
+    title: 'MJGOS - Simplicity and Functionality',
+    description: 'MJGOS builds high-quality, functional software solutions.',
     // creator: '@yourtwitterhandle', // Replace with actual Twitter handle
     images: ['https://placehold.co/1200x600.png'], // Replace with actual Twitter image
   },
