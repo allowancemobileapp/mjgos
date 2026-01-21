@@ -62,7 +62,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 md:px-8 lg:px-16 grid md:grid-cols-2 gap-12 items-center">
         <motion.div className="text-center md:text-left" variants={fadeIn("right", 0.2)}>
           <h1 id="hero-heading" className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+            <span className="text-primary">
               MJGOS
             </span>
             <br />

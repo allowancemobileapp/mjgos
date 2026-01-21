@@ -3,8 +3,10 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { FeatureSection } from "@/components/sections/feature-section";
 import { CustomerLogosSection } from "@/components/sections/customer-logos-section";
+import { PricingSection } from "@/components/sections/pricing-section";
+import { Button } from "@/components/ui/button";
 import type { Feature } from "@/types";
-import { AppWindow, Smartphone, Globe, Zap } from "lucide-react";
+import { AppWindow, Smartphone, Globe, Zap, Phone } from "lucide-react";
 
 const features: Feature[] = [
   {
@@ -56,16 +58,16 @@ export default function LandingPage() {
         ))}
       </div>
       <CustomerLogosSection />
-      <section id="pricing" className="py-16 sm:py-24 bg-background text-center">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="text-3xl font-bold mb-4">Pricing</h2>
-          <p className="text-lg text-muted-foreground">Flexible plans for businesses of all sizes. Contact us for a custom quote.</p>
-        </div>
-      </section>
-      <section id="contact" className="py-16 sm:py-24 bg-secondary text-center">
+      <PricingSection />
+      <section id="contact" className="py-16 sm:py-24 bg-background text-center">
          <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-          <p className="text-lg text-muted-foreground">Ready to start your project? Get in touch with our team.</p>
+          <h2 className="text-3xl font-bold mb-4">Let's Get Busy!</h2>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">Ready to start your project? Have a custom request? Get in touch with our team.</p>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+               <a href="tel:09135067590">
+                 <Phone className="mr-2 h-5 w-5" /> Call or Text: 09135067590
+               </a>
+            </Button>
         </div>
       </section>
     </>

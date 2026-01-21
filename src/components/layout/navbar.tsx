@@ -64,8 +64,8 @@ export function Navbar() {
 
         <div className="flex items-center space-x-2">
           <ThemeToggleButton />
-          <Button variant="default" size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
-            Get a Quote
+          <Button asChild variant="default" size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Link href="#contact">Get a Quote</Link>
           </Button>
           <Button
             variant="ghost"
@@ -101,8 +101,8 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                Get a Quote
+              <Button asChild variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Link href="#contact" onClick={() => setIsOpen(false)}>Get a Quote</Link>
               </Button>
             </div>
           </motion.div>
