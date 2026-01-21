@@ -4,16 +4,19 @@ import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import { Toaster } from "@/components/ui/toaster";
+import { Navbar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
 
 const geistSans = GeistSans;
 const geistMono = GeistMono;
 
 export const metadata: Metadata = {
   title: {
-    default: 'MJGOS - Simplicity and Functionality',
+    default: 'MJGOS - Custom Software Solutions',
     template: '%s | MJGOS',
   },
-  description: 'MJGOS (Mr James Group of SAAS) builds high-quality, functional software solutions including web apps, websites, and mobile apps.',
+  description: 'We build high-quality web apps, websites, and mobile apps with a focus on simplicity and functionality.',
+  keywords: ['saas', 'web development', 'mobile apps', 'software solutions', 'custom software'],
   openGraph: {
     title: 'MJGOS - Simplicity and Functionality',
     description: 'MJGOS builds high-quality, functional software solutions.',
@@ -48,10 +51,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // verification: { // Add verification tags if needed
-  //   google: 'your-google-site-verification-code',
-  //   yandex: 'your-yandex-verification-code',
-  // },
 };
 
 export default function RootLayout({
@@ -68,7 +67,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
+          <main className="flex-grow pt-[60px] md:pt-[68px]">
+            {children}
+          </main>
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>
